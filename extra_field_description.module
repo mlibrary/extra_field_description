@@ -7,14 +7,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldFilteredMarkup;
-use Drupal\Component\Utility\Xss;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
-
-/**
- * Define module path constant.
- */
-define("EXTRA_FIELD_DESCRIPTION_MODULE_PATH", drupal_get_path('module', 'extra_field_description'));
 
 /**
  * Implements hook_field_widget_third_party_settings_form().
@@ -59,6 +53,7 @@ function extra_field_description_field_widget_form_alter(&$element, FormStateInt
     $element['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
   }
 }
+
 /**
  * Implements hook_page_attachments().
  */
