@@ -53,7 +53,12 @@ function extra_field_description_field_widget_form_alter(&$element, FormStateInt
   $third_party_settings = $context['widget']->getThirdPartySettings('extra_field_description', 'extra_description');
   if (!empty($third_party_settings)) {
     if (isset($element['value'])) {
-      $element['value']['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
+      if ($element['value']['#type'] == 'datetime') {
+        $element['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
+      }
+      else {
+        $element['value']['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
+      }
     }
     else if (isset($element['target_id'])) {
       $element['target_id']['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
