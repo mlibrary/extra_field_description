@@ -60,7 +60,7 @@ function extra_field_description_field_widget_form_alter(&$element, FormStateInt
         $element['value']['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
       }
     }
-    else if (isset($element['target_id'])) {
+    elseif (isset($element['target_id'])) {
       $element['target_id']['#field_prefix'] = '<div class="extra-description" >' . $third_party_settings['extra_description']['over_description'] . '</div>';
     }
     else {
