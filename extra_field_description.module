@@ -15,7 +15,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
  */
 function extra_field_description_field_widget_third_party_settings_form(WidgetInterface $plugin, FieldDefinitionInterface $field_definition, $form_mode, $form, FormStateInterface $form_state) {
   if ($field_definition->getFieldStorageDefinition()->isBaseField() == FALSE) {
-    $plugin_third_party_settings = $plugin->getThirdPartySettings('extra_field_description', 'extra_description');
+    $plugin_third_party_settings = $plugin->getThirdPartySettings('extra_field_description');
     // Check if we have access to extra fields.
     if (\Drupal::currentUser()->hasPermission('administer field prefix')) {
       // Append extra fields in field settings form.
