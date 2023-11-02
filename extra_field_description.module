@@ -57,9 +57,9 @@ function extra_field_description_field_widget_third_party_settings_form(WidgetIn
 }
 
 /**
- * Implements hook_field_widget_form_alter().
+ * Implements hook_field_widget_single_element_form_alter().
  */
-function extra_field_description_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+function extra_field_description_field_widget_single_element_form_alter(array &$element, FormStateInterface $form_state, array $context) {
   $third_party_settings = $context['widget']->getThirdPartySettings('extra_field_description', 'extra_description');
   if (!empty($third_party_settings)) {
     if (isset($element['value'])) {
